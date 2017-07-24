@@ -53,7 +53,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         ...INITIAL_STATE,
-        message: 'l\'inscription à été un succes',
+        message: 'Felicitation! votre compte a bien été créé. Un email de confirmation vient de vous être envoyé',
         user: action.payload
       };
     case REGISTER_USER_FAILED:

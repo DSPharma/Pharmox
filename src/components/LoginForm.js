@@ -26,7 +26,7 @@ class LoginForm extends Component {
     }
     return (
       <Button onPress={this.onPressButton.bind(this)}>
-        Sidentifier
+        Identifiez vous !
       </Button>
     );
   }
