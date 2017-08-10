@@ -10,7 +10,7 @@ import PhotoForm from './components/PhotoForm';
 
 const RouterComponent = () => {
   return (
-    <Router>
+    <Router navigationBarStyle={{ backgroundColor: '#49B0D6' }} titleStyle={{ color: 'white' }} barButtonIconStyle={{ tintColor: 'white' }}>
       <Scene key="auth">
         <Scene sceneStyle={{ paddingTop: 65 }} key="login" component={LoginForm} title="Pharmox" initial />
         <Scene sceneStyle={{ paddingTop: 65 }} key="subscribe" component={SignUpForm} title="Créer un compte" />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Image, TouchableOpacity } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
@@ -19,16 +19,29 @@ class ListItem extends Component {
     return (
       <TouchableOpacity onPress={() => Actions.photo()}>
         <CardSection style={{ alignItems: 'center' }}>
-            <Image
-              style={{ width: 60, height: 45 }}
-              source={require('../../appareilphoto.png')}
-            />
-            <Text> {laboratoryname}</Text>
-            <Text> {title}</Text>
-            <Text> {product}</Text>
+          <Image
+            style={{ width: 60, height: 45 }}
+            source={require('../../appareilphoto.png')}
+          />
+          <View>
+            <View>
+              <Text style={styles.textStyle}> {laboratoryname} {product}</Text>
+            </View>
+            <Text style={styles.textBoldStyle}> {title}</Text>
+          </View>
         </CardSection>
       </TouchableOpacity>
     );
+  }
+}
+
+const styles = {
+  textStyle: {
+    fontSize: 18
+  },
+  textBoldStyle: {
+    fontSize: 18,
+    fontWeight: 'bold'
   }
 }
 

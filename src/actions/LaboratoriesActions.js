@@ -9,7 +9,7 @@ export const laboratoriesFetch = (user) => {
   return (dispatch) => {
     dispatch({ type: LABORATORIES_FETCH });
 
-    var test = 'http://localhost:3000/api/v1/laboratories?user_email=' + user.email + '&user_token=' + user.authentication_token;
+    var test = 'http://192.168.1.17:3000/api/v1/laboratories?user_email=' + user.email + '&user_token=' + user.authentication_token;
     console.log(test);
     axios.get(test)
     .then(response => {

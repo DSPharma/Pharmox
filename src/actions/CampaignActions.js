@@ -5,20 +5,21 @@ import {
   CAMPAIGNS_FETCH_FAIL,
   CAMPAIGN_NOW,
   CAMPAIGN_FUTUR,
-  CAMPAIGN_PAST
+  CAMPAIGN_PAST,
+  CAMPAIGN_TIME_SUCCESS
 } from './types';
 
 export const campaignsFetch = (user) => {
   return (dispatch) => {
     dispatch({ type: CAMPAIGNS_FETCH });
 
-    var test = 'http://localhost:3000/api/v1/campaigns?user_email=' + user.email + '&user_token=' + user.authentication_token;
+    var test = 'http://192.168.1.17:3000/api/v1/campaigns?user_email=' + user.email + '&user_token=' + user.authentication_token;
     console.log(test);
     axios.post(test, { user: user })
     .then(response => {
         campainsFetchSuccess(dispatch, response.data);
         // dispatch({ type: CAMPAIGNS_FETCH, payload: response.data });
-        console.log(response.data.now_nbr);
+        console.log(response.data);
         console.log(JSON.stringify(response.data.now));
     })
     .catch(error => {
@@ -55,5 +56,11 @@ export const campaignPast = () => {
 export const campaignFutur = () => {
   return (dispatch) => {
     dispatch({ type: CAMPAIGN_FUTUR });
+  };
+};
+
+export const campaignTime = () => {
+  return (dispatch) => {
+    dispatch({ type: CAMPAIGN_TIME_SUCCESS });
   };
 };

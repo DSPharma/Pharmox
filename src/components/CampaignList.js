@@ -3,6 +3,7 @@ import { Text, View, ListView } from 'react-native';
 import { connect } from 'react-redux';
 import { Card } from './common';
 import ListItem from './ListItem';
+import { campaignTime } from '../actions';
 
 class CampaignList extends Component {
   componentWillMount() {
@@ -17,6 +18,7 @@ class CampaignList extends Component {
     } else if (this.props.time === 'futur') {
       this.dataSource = ds.cloneWithRows(this.props.campaigns.futur);
     }
+    // this.props.campaignTime();
     console.log(this.dataSource);
   }
 
@@ -50,7 +52,7 @@ class CampaignList extends Component {
 }
 
 const styles = {
-    viewStyle: {
+  viewStyle: {
     flex: 1,
     justifyContent: 'center'
   }
@@ -63,4 +65,4 @@ const mapStateToProps = ({ campaign, auth }) => {
   return { user, campaigns, time };
 };
 
-export default connect(mapStateToProps)(CampaignList);
+export default connect(mapStateToProps, { campaignTime })(CampaignList);

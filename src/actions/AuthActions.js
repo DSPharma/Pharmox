@@ -56,7 +56,7 @@ export const loginUser = ({ email, password }) => {
   return (dispatch) => {
     dispatch({ type: LOGIN_USER });
 
-    axios.post('http://localhost:3000/api/v1/sign_in', { user_login: email, password: password })
+    axios.post('http://192.168.1.17:3000/api/v1/sign_in', { user_login: email, password: password })
     .then(response => {
       loginUserSuccess(dispatch, response.data);
       console.log('success');
@@ -86,7 +86,7 @@ export const registerUser = ({ email, password, confirmPassword, enrollementCode
   return (dispatch) => {
     dispatch({ type: REGISTER_USER });
 
-    axios.post('http://localhost:3000/api/v1/sign_up', { user: { email: email, password: password, password_confirmation: confirmPassword, enrollement_code: enrollementCode } })
+    axios.post('http://192.168.1.17:3000/api/v1/sign_up', { user: { email: email, password: password, password_confirmation: confirmPassword, enrollement_code: enrollementCode } })
     .then(response => {
       registerUserSuccess(dispatch, response.data);
       console.log('success');
@@ -116,7 +116,7 @@ export const askEmail = ({ cip }) => {
   return (dispatch) => {
     dispatch({ type: ASK_EMAIL });
 
-    axios.post('http://localhost:3000/pharmacies/all', { cip: cip })
+    axios.post('http://192.168.1.17:3000/pharmacies/all', { cip: cip })
     .then(response => {
       console.log(response.data);
       askEmailSuccess(dispatch, response.data);

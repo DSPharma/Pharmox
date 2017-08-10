@@ -21,8 +21,13 @@ export const CAMPAIGNS_FETCH_FAIL = 'campaigns_fetch_fail';
 export const CAMPAIGN_NOW = 'campaigns_now';
 export const CAMPAIGN_PAST = 'campaigns_past';
 export const CAMPAIGN_FUTUR = 'campaigns_futur';
+export const CAMPAIGN_TIME_SUCCESS = 'campaign_time_success';
 
 // Laboratory Actions
 export const LABORATORIES_FETCH = 'laboratories_fetch';
 export const LABORATORIES_FETCH_SUCCESS = 'laboratories_fetch_success';
 export const LABORATORIES_FETCH_FAIL = 'laboratories_fetch_fail';
+
+// Camera Actions
+export const OPEN_CAMERA = 'open_camera';
+export const CLOSE_CAMERA = 'close_camera';
